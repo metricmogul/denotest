@@ -18,15 +18,15 @@ cd denotest
 npm install
 
 # Start Supabase
+cd apps/edge
 supabase start
-
-# Run Supabase functions locally
-cd edge
 supabase functions serve
 
 ```
 
-Use Postman or equivalent to send a POST request to the `hello-world` function at `http://127.0.0.1:54321/functions/v1/hello-world`.
+Use Postman or equivalent to send a POST request to the `works-fine` function at `http://127.0.0.1:54321/functions/v1/works-fine`. You will get a valid response.
+
+Now use Postman or equivalent to send a POST request to the `hello-world` function at `http://127.0.0.1:54321/functions/v1/hello-world`.
 
 The error that is returned is:
 
@@ -36,6 +36,8 @@ The error that is returned is:
     "message": "Worker failed to boot (please check logs)"
 }
 ```
+
+The only difference is one imports from the `_shared` folder.
 
 ## Cleanup
 
